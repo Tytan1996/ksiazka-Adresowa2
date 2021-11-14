@@ -11,16 +11,6 @@ void UzytkownikMenedzer::rejestracjaUzytkownika() {
 
 }
 
-void UzytkownikMenedzer::wypiszWszyskichUzytkownikow() {
-
-    for(int i=0; i<uzytkownicy.size(); ++i) {
-       cout<<uzytkownicy[i].pobierzID()<<endl;
-       cout<<uzytkownicy[i].pobierzLogin()<<endl;
-       cout<<uzytkownicy[i].pobierzHaslo()<<endl;
-
-    }
-
-}
 int UzytkownikMenedzer::pobierzIdNowegoUzytkownika() {
     if (uzytkownicy.empty() == true)
         return 1;
@@ -59,14 +49,9 @@ bool UzytkownikMenedzer::czyIstniejeLogin(string login){
     return false;
 
 }
-void UzytkownikMenedzer::wczytajUzytkownikowZPliku(){
 
-    uzytkownicy=plikZUzytkownikami.wczytajUzytkownikowZPliku();
-
-}
-int UzytkownikMenedzer::logowanieUzytkownika()
+void UzytkownikMenedzer::logowanieUzytkownika()
 {
-    Uzytkownik uzytkownik;
     string login = "", haslo = "";
 
     cout << endl << "Podaj login: ";
@@ -84,22 +69,23 @@ int UzytkownikMenedzer::logowanieUzytkownika()
 
                 if (itr -> pobierzHaslo() == haslo)
                 {
+                    idZalogowanegoUzytkownika=itr->pobierzID();
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return itr -> pobierzID();
+                    return ;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
             system("pause");
-            return 0;
+            return;
         }
         itr++;
     }
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
-    return 0;
+    return;
 }
-void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika){
+void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(){
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
     noweHaslo = MetodyPomocnicze::wczytajLinie();
@@ -114,4 +100,20 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUz
         }
     }
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+}
+void UzytkownikMenedzer::wylogowanieUzytkownika(){
+    idZalogowanegoUzytkownika=0;
+}
+bool UzytkownikMenedzer::czyUzytkowikJestZalogowany(){
+
+    if(idZalogowanegoUzytkownika>0)
+        return true;
+    else
+        return false;
+
+}
+int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika(){
+
+    return idZalogowanegoUzytkownika;
+
 }
