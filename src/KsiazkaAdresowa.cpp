@@ -43,8 +43,8 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     cout << "2. Wyszukaj po imieniu (niedostepne)" << endl;
     cout << "3. Wyszukaj po nazwisku (niedostepne)" << endl;
     cout << "4. Wyswietl adresatow" << endl;
-    cout << "5. Usun adresata (niedostepne)" << endl;
-    cout << "6. Edytuj adresata (niedostepne)" << endl;
+    cout << "5. Usun adresata" << endl;
+    cout << "6. Edytuj adresata" << endl;
     cout << "---------------------------" << endl;
     cout << "7. Zmien haslo" << endl;
     cout << "8. Wyloguj sie" << endl;
@@ -83,4 +83,10 @@ bool KsiazkaAdresowa::czyUzytkownikJestZalogowony(){
 }
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow(){
     adresatMenedzer->wyswietlWszystkichAdresatow();
+}
+void KsiazkaAdresowa::edycjaAdresata(){
+    adresatMenedzer->edytujAdresata();
+}
+void KsiazkaAdresowa::usunAdresata(){
+    adresatMenedzer->usunAdresata();
 }

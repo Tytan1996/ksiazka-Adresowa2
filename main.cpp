@@ -56,13 +56,11 @@ int main()
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
             case '5':
-                cout<<"Opcja chwilow niedostepna"<<endl;
-                //idUsunietegoAdresata = usunAdresata(adresaci);
-                //idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
+                ksiazkaAdresowa.usunAdresata();
                 break;
             case '6':
-                cout<<"Opcja chwilow niedostepna"<<endl;
-                //edytujAdresata(adresaci);
+                //cout<<"Opcja chwilow niedostepna"<<endl;
+                ksiazkaAdresowa.edycjaAdresata();
                 break;
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();

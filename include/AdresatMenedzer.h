@@ -20,6 +20,10 @@ class AdresatMenedzer
 
     Adresat podajDaneNowegoAdresata();
     void wyswietlDaneAdresata(Adresat adresat);
+    int podajIdWybranegoAdresata();
+    char wybierzOpcjeZMenuEdycja();
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat);
+    string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
 
 
 public:
@@ -29,6 +33,10 @@ public:
     };
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
+    void edytujAdresata();
+    void usunAdresata();
+    void zaktualizujNumerLiniiSzukanegoAdresata();
+
 
 };
 

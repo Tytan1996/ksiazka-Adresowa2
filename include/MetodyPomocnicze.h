@@ -18,6 +18,8 @@ class MetodyPomocnicze
         static char wczytajZnak();
         static int konwersjaStringNaInt(string liczba);
         static string pobierzLiczbe(string tekst, int pozycjaZnaku);
+        static int wczytajLiczbeCalkowita();
+
 
 
 
