@@ -6,23 +6,21 @@
 #include <fstream>
 #include <cstdlib>
 
+#include "Pliki.h"
 #include "MetodyPomocnicze.h"
 #include "Uzytkownik.h"
 
 
+class PlikZUzytkownikami:public Pliki {
 
-class PlikZUzytkownikami {
-
-    const string NAZWA_PLIKU_Z_UZYTKOWNIKAMI;
 
     string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
-    bool czyPlikJestPusty();
     Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
 
 
 
 public:
-    PlikZUzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI): NAZWA_PLIKU_Z_UZYTKOWNIKAMI(NAZWAPLIKUZUZYTKOWNIKAMI){};
+    PlikZUzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI): Pliki(NAZWAPLIKUZUZYTKOWNIKAMI){};
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
     vector<Uzytkownik> wczytajUzytkownikowZPliku();
     void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> &uzytkownicy);

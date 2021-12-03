@@ -13,7 +13,7 @@ void KsiazkaAdresowa::logowanieUzytkownika()
     uzytkownikMenedzer.logowanieUzytkownika();
     if(uzytkownikMenedzer.czyUzytkowikJestZalogowany()){
 
-        adresatMenedzer=new AdresatMenedzer(NAZWA_Z_PLIKU_Z_ADRESATAMI,uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
+        adresatMenedzer=new AdresatMenedzer(NAZWA_Z_PLIKU_Z_ADRESATAMI,NAZWA_TYMCZASIWEGO_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
     }
 }
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()

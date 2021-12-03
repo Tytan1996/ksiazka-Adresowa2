@@ -9,7 +9,7 @@ int main()
 {
 
     char wybor;
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt","Adresaci.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt","Adresaci.txt","Adresaci_tymczasowo.txt");
 
     while (true)
     {

@@ -117,16 +117,19 @@ void AdresatMenedzer::edytujAdresata()
             case '3':
                 cout << "Podaj nowy numer telefonu: ";
                 numerTelefonu = MetodyPomocnicze::wczytajLinie();
+                adresaci[i].ustawNumerTelefonu(numerTelefonu);
                 zaktualizujDaneWybranegoAdresata(adresaci[i]);
                 break;
             case '4':
                 cout << "Podaj nowy email: ";
                 email = MetodyPomocnicze::wczytajLinie();
+                adresaci[i].ustawEmail(email);
                 zaktualizujDaneWybranegoAdresata(adresaci[i]);
                 break;
             case '5':
                 cout << "Podaj nowy adres zamieszkania: ";
                 adres = MetodyPomocnicze::wczytajLinie();
+                adresaci[i].ustawAdres(adres);
                 zaktualizujDaneWybranegoAdresata(adresaci[i]);
                 break;
             case '6':
@@ -172,7 +175,7 @@ char AdresatMenedzer::wybierzOpcjeZMenuEdycja()
 void AdresatMenedzer::zaktualizujDaneWybranegoAdresata(Adresat adresat)
 {
 
-    //plikZAdresatami.zwrocNumerLiniiSzukanegoAdresata(adresat);
+    plikZAdresatami.zaktualizujDaneWybranegoAdresata(adresat);
 
     cout << endl << "Dane zostaly zaktualizowane." << endl << endl;
 }

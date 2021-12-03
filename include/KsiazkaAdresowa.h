@@ -14,10 +14,12 @@ class KsiazkaAdresowa {
     UzytkownikMenedzer uzytkownikMenedzer;
     AdresatMenedzer *adresatMenedzer;
     const string NAZWA_Z_PLIKU_Z_ADRESATAMI;
+    const string NAZWA_TYMCZASIWEGO_PLIKU_Z_ADRESATAMI;
+
 
 public:
-    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami)
-    : uzytkownikMenedzer(nazwaPlikuZUzytkownikami), NAZWA_Z_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami){
+    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami, string nazwaTymczasowegoPlikuZAdresatami)
+    : uzytkownikMenedzer(nazwaPlikuZUzytkownikami), NAZWA_Z_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami), NAZWA_TYMCZASIWEGO_PLIKU_Z_ADRESATAMI(nazwaTymczasowegoPlikuZAdresatami){
         adresatMenedzer =NULL;
     };
     ~KsiazkaAdresowa(){
